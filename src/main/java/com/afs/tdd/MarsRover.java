@@ -1,10 +1,11 @@
 package com.afs.tdd;
 
 public class MarsRover {
-    private Coordinate coordinate;
+    int xPosition;
+    int yPosition;
+    char direction;
 
 
-    public Coordinate Move(String direction) {
+    public int getXPosition() {
     }
-
 }
