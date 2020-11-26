@@ -27,13 +27,13 @@ public class MarsRover {
         if (direction == "N") {
             yPosition++;
         }
-        if (direction == "E") {
+        else if (direction == "E") {
             xPosition++;
         }
-        if (direction == "S") {
+        else if (direction == "S") {
             yPosition--;
         }
-        if (direction == "W") {
+        else if (direction == "W") {
             xPosition--;
         }
     }
@@ -42,11 +42,14 @@ public class MarsRover {
         if (direction == "N") {
             direction = "W";
         }
-        if (direction == "E") {
+        else if (direction == "E") {
             direction = "N";
         }
-        if (direction == "S") {
+        else if (direction == "S") {
             direction = "E";
+        }
+        else if (direction == "W") {
+            direction = "S";
         }
     }
 }
