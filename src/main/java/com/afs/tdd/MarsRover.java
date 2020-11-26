@@ -52,4 +52,10 @@ public class MarsRover {
             direction = "S";
         }
     }
+
+    public void TurnRight() {
+        if (direction == "N") {
+            direction = "E";
+        }
+    }
 }

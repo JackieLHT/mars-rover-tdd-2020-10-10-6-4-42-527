@@ -124,7 +124,7 @@ class DemoTest {
         String direction = "N";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnLeft();
+        marsRover.TurnRight();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
