@@ -29,7 +29,7 @@ class DemoTest {
         marsRover.Move();
 
         assertEquals(3,marsRover.getXPosition());
-        assertEquals(2,marsRover.getYPosition());
+        assertEquals(3,marsRover.getYPosition());
         assertEquals("E",marsRover.getDirection());
     }
 
@@ -37,7 +37,7 @@ class DemoTest {
     public void should_return_yPosition_minus_one_when_Move_given_direction_S() {
         int xPosition = 2;
         int yPosition = 3;
-        String direction = "E";
+        String direction = "S";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.Move();
