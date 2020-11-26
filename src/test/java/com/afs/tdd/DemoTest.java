@@ -145,4 +145,18 @@ class DemoTest {
         assertEquals("S",marsRover.getDirection());
     }
 
+    @Test
+    public void should_return_direction_W_when_TurnRight_with_direction_S() {
+        int xPosition = 2;
+        int yPosition = 3;
+        String direction = "S";
+
+        MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
+        marsRover.TurnRight();
+
+        assertEquals(2,marsRover.getXPosition());
+        assertEquals(3,marsRover.getYPosition());
+        assertEquals("W",marsRover.getDirection());
+    }
+
 }
