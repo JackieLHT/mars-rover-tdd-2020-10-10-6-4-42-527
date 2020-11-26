@@ -12,7 +12,7 @@ class DemoTest {
         String direction = "N";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.Move();
+        marsRover.move();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(4,marsRover.getYPosition());
@@ -26,7 +26,7 @@ class DemoTest {
         String direction = "E";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.Move();
+        marsRover.move();
 
         assertEquals(3,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -40,7 +40,7 @@ class DemoTest {
         String direction = "S";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.Move();
+        marsRover.move();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(2,marsRover.getYPosition());
@@ -54,7 +54,7 @@ class DemoTest {
         String direction = "W";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.Move();
+        marsRover.move();
 
         assertEquals(1,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -68,7 +68,7 @@ class DemoTest {
         String direction = "N";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnLeft();
+        marsRover.turnLeft();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -82,7 +82,7 @@ class DemoTest {
         String direction = "E";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnLeft();
+        marsRover.turnLeft();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -96,7 +96,7 @@ class DemoTest {
         String direction = "S";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnLeft();
+        marsRover.turnLeft();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -110,7 +110,7 @@ class DemoTest {
         String direction = "W";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnLeft();
+        marsRover.turnLeft();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -124,7 +124,7 @@ class DemoTest {
         String direction = "N";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnRight();
+        marsRover.turnRight();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -138,7 +138,7 @@ class DemoTest {
         String direction = "E";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnRight();
+        marsRover.turnRight();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -152,7 +152,7 @@ class DemoTest {
         String direction = "S";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnRight();
+        marsRover.turnRight();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
@@ -166,11 +166,26 @@ class DemoTest {
         String direction = "W";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.TurnRight();
+        marsRover.turnRight();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
         assertEquals("N",marsRover.getDirection());
+    }
+
+    @Test
+    public void should_be_at_6_4_S_when_processInstructions_given_MMRMRMLMMMR_initial_at_2_3_N() {
+        int xPosition = 2;
+        int yPosition = 3;
+        String direction = "N";
+
+        MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
+        marsRover.processInstructions();
+
+        assertEquals(6,marsRover.getXPosition());
+        assertEquals(4,marsRover.getYPosition());
+        assertEquals("S",marsRover.getDirection());
+
     }
 
 }

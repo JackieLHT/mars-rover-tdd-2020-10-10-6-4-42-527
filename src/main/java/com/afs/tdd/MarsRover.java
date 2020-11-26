@@ -23,7 +23,7 @@ public class MarsRover {
         return direction;
     }
 
-    public void Move() {
+    public void move() {
         if (direction == "N") {
             yPosition++;
         }
@@ -38,7 +38,7 @@ public class MarsRover {
         }
     }
 
-    public void TurnLeft() {
+    public void turnLeft() {
         if (direction == "N") {
             direction = "W";
         }
@@ -53,7 +53,7 @@ public class MarsRover {
         }
     }
 
-    public void TurnRight() {
+    public void turnRight() {
         if (direction == "N") {
             direction = "E";
         }
@@ -67,4 +67,5 @@ public class MarsRover {
             direction = "N";
         }
     }
+
 }
