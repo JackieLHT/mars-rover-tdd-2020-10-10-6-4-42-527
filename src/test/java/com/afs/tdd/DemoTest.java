@@ -47,4 +47,18 @@ class DemoTest {
         assertEquals("S",marsRover.getDirection());
     }
 
+    @Test
+    public void should_return_xPosition_minus_one_when_Move_given_direction_W() {
+        int xPosition = 2;
+        int yPosition = 3;
+        String direction = "W";
+
+        MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
+        marsRover.Move();
+
+        assertEquals(1,marsRover.getXPosition());
+        assertEquals(3,marsRover.getYPosition());
+        assertEquals("W",marsRover.getDirection());
+    }
+
 }
