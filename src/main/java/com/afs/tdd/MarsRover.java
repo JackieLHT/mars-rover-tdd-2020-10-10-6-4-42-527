@@ -1,11 +1,13 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
     int xPosition;
     int yPosition;
-    String direction;
+    char direction;
 
-    public MarsRover(int xPosition,int yPosition, String direction) {
+    public MarsRover(int xPosition, int yPosition, char direction) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.direction = direction;
@@ -19,53 +21,56 @@ public class MarsRover {
         return yPosition;
     }
 
-    public String getDirection() {
+    public char getDirection() {
         return direction;
     }
 
     public void move() {
-        if (direction == "N") {
+        if (direction == 'N') {
             yPosition++;
-        }
-        else if (direction == "E") {
+        } else if (direction == 'E') {
             xPosition++;
-        }
-        else if (direction == "S") {
+        } else if (direction == 'S') {
             yPosition--;
-        }
-        else if (direction == "W") {
+        } else if (direction == 'W') {
             xPosition--;
         }
     }
 
     public void turnLeft() {
-        if (direction == "N") {
-            direction = "W";
-        }
-        else if (direction == "E") {
-            direction = "N";
-        }
-        else if (direction == "S") {
-            direction = "E";
-        }
-        else if (direction == "W") {
-            direction = "S";
+        if (direction == 'N') {
+            direction = 'W';
+        } else if (direction == 'E') {
+            direction = 'N';
+        } else if (direction == 'S') {
+            direction = 'E';
+        } else if (direction == 'W') {
+            direction = 'S';
         }
     }
 
     public void turnRight() {
-        if (direction == "N") {
-            direction = "E";
-        }
-        else if (direction == "E") {
-            direction = "S";
-        }
-        else if (direction == "S") {
-            direction = "W";
-        }
-        else if (direction == "W") {
-            direction = "N";
+        if (direction == 'N') {
+            direction = 'E';
+        } else if (direction == 'E') {
+            direction = 'S';
+        } else if (direction == 'S') {
+            direction = 'W';
+        } else if (direction == 'W') {
+            direction = 'N';
         }
     }
 
+    public void processInstructions(String instructions) {
+        for (char instruction : instructions.trim().toCharArray()) {
+            if (instruction == 'M') {
+                this.move();
+            } else if (instruction == 'L') {
+                this.turnLeft();
+            } else if (instruction == 'R') {
+                this.turnRight();
+            }
+        }
+
+    }
 }
