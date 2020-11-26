@@ -9,7 +9,7 @@ class DemoTest {
     public void should_return_yPosition_plus_one_when_Move_given_direction_N() {
         int xPosition = 1;
         int yPosition = 2;
-        char direction = 'N';
+        String direction = "N";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.Move();
@@ -23,7 +23,7 @@ class DemoTest {
     public void should_return_xPosition_plus_one_when_Move_given_direction_E() {
         int xPosition = 2;
         int yPosition = 3;
-        char direction = 'E';
+        String direction = "E";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.Move();

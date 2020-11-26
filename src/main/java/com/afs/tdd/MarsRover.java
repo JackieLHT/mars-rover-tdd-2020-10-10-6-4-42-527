@@ -3,9 +3,9 @@ package com.afs.tdd;
 public class MarsRover {
     int xPosition;
     int yPosition;
-    char direction;
+    String direction;
 
-    public MarsRover(int xPosition,int yPosition, char direction) {
+    public MarsRover(int xPosition,int yPosition, String direction) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.direction = direction;
@@ -19,13 +19,16 @@ public class MarsRover {
         return yPosition;
     }
 
-    public char getDirection() {
+    public String getDirection() {
         return direction;
     }
 
     public void Move() {
-        if(direction == 'N') {
+        if(direction == "N") {
             yPosition++;
+        }
+        if(direction == "E") {
+            xPosition++;
         }
     }
 }
