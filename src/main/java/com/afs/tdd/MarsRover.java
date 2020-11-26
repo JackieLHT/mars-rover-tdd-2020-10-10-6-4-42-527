@@ -63,5 +63,8 @@ public class MarsRover {
         else if (direction == "S") {
             direction = "W";
         }
+        else if (direction == "W") {
+            direction = "N";
+        }
     }
 }
