@@ -62,13 +62,13 @@ class DemoTest {
     }
 
     @Test
-    public void should_return_direction_W_when_Turn_L_with_direction_N() {
+    public void should_return_direction_W_when_TurnLeft_with_direction_N() {
         int xPosition = 2;
         int yPosition = 3;
         String direction = "N";
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
-        marsRover.Turn();
+        marsRover.TurnLeft();
 
         assertEquals(2,marsRover.getXPosition());
         assertEquals(3,marsRover.getYPosition());
