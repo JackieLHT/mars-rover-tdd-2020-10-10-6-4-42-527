@@ -24,14 +24,17 @@ public class MarsRover {
     }
 
     public void Move() {
-        if(direction == "N") {
+        if (direction == "N") {
             yPosition++;
         }
-        if(direction == "E") {
+        if (direction == "E") {
             xPosition++;
         }
-        if(direction == "S") {
+        if (direction == "S") {
             yPosition--;
+        }
+        if (direction == "W") {
+            xPosition--;
         }
     }
 }
