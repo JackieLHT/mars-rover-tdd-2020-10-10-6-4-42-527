@@ -32,11 +32,14 @@ public class MarsRover {
     public void move() {
         if (direction == NORTH) {
             yPosition++;
-        } else if (direction == EAST) {
+        }
+        if (direction == EAST) {
             xPosition++;
-        } else if (direction == SOUTH) {
+        }
+        if (direction == SOUTH) {
             yPosition--;
-        } else if (direction == WEST) {
+        }
+        if (direction == WEST) {
             xPosition--;
         }
     }
