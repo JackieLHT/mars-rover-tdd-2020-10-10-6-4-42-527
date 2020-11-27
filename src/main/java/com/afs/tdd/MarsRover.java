@@ -3,6 +3,10 @@ package com.afs.tdd;
 import java.util.Arrays;
 
 public class MarsRover {
+    static final char NORTH = 'N';
+    static final char EAST = 'E';
+    static final char SOUTH = 'S';
+    static final char WEST = 'W';
     int xPosition;
     int yPosition;
     char direction;
@@ -26,38 +30,38 @@ public class MarsRover {
     }
 
     public void move() {
-        if (direction == 'N') {
+        if (direction == NORTH) {
             yPosition++;
-        } else if (direction == 'E') {
+        } else if (direction == EAST) {
             xPosition++;
-        } else if (direction == 'S') {
+        } else if (direction == SOUTH) {
             yPosition--;
-        } else if (direction == 'W') {
+        } else if (direction == WEST) {
             xPosition--;
         }
     }
 
     public void turnLeft() {
-        if (direction == 'N') {
-            direction = 'W';
-        } else if (direction == 'E') {
-            direction = 'N';
-        } else if (direction == 'S') {
-            direction = 'E';
-        } else if (direction == 'W') {
-            direction = 'S';
+        if (direction == NORTH) {
+            direction = WEST;
+        } else if (direction == EAST) {
+            direction = NORTH;
+        } else if (direction == SOUTH) {
+            direction = EAST;
+        } else if (direction == WEST) {
+            direction = SOUTH;
         }
     }
 
     public void turnRight() {
-        if (direction == 'N') {
-            direction = 'E';
-        } else if (direction == 'E') {
-            direction = 'S';
-        } else if (direction == 'S') {
-            direction = 'W';
-        } else if (direction == 'W') {
-            direction = 'N';
+        if (direction == NORTH) {
+            direction = EAST;
+        } else if (direction == EAST) {
+            direction = SOUTH;
+        } else if (direction == SOUTH) {
+            direction = WEST;
+        } else if (direction == WEST) {
+            direction = NORTH;
         }
     }
 
