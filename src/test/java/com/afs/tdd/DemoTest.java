@@ -1,14 +1,14 @@
 package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
-
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DemoTest {
-    static final char NORTH = 'N';
-    static final char EAST = 'E';
-    static final char SOUTH = 'S';
-    static final char WEST = 'W';
+    private static final char NORTH = 'N';
+    private static final char EAST = 'E';
+    private static final char SOUTH = 'S';
+    private static final char WEST = 'W';
     @Test
     public void should_return_yPosition_plus_one_when_Move_given_direction_N() {
         int xPosition = 2;
@@ -17,10 +17,10 @@ class DemoTest {
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.move();
+        Coordinates expected = new Coordinates(2,4,NORTH);
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(4,marsRover.getYPosition());
-        assertEquals(NORTH,marsRover.getDirection());
+        assertEquals(expected,marsRover.getCoordinates());
+
     }
 
     @Test
@@ -32,9 +32,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.move();
 
-        assertEquals(3,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(EAST,marsRover.getDirection());
+        Coordinates expected = new Coordinates(3,3,EAST);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -46,9 +46,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.move();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(2,marsRover.getYPosition());
-        assertEquals(SOUTH,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,2,SOUTH);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -58,11 +58,12 @@ class DemoTest {
         char direction = WEST;
 
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
+
         marsRover.move();
 
-        assertEquals(1,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(WEST,marsRover.getDirection());
+        Coordinates expected = new Coordinates(1,3,WEST);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -74,9 +75,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.turnLeft();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(WEST,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,3,WEST);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -88,9 +89,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.turnLeft();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(NORTH,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,3,NORTH);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -102,9 +103,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.turnLeft();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(EAST,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,3,EAST);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -116,9 +117,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.turnLeft();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(SOUTH,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,3,SOUTH);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -130,9 +131,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.turnRight();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(EAST,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,3,EAST);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -144,9 +145,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.turnRight();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(SOUTH,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,3,SOUTH);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -158,9 +159,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.turnRight();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(WEST,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,3,WEST);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -172,9 +173,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.turnRight();
 
-        assertEquals(2,marsRover.getXPosition());
-        assertEquals(3,marsRover.getYPosition());
-        assertEquals(NORTH,marsRover.getDirection());
+        Coordinates expected = new Coordinates(2,3,NORTH);
+
+        assertEquals(expected,marsRover.getCoordinates());
     }
 
     @Test
@@ -187,9 +188,9 @@ class DemoTest {
         MarsRover marsRover = new MarsRover(xPosition,yPosition,direction);
         marsRover.processInstructions(instructions);
 
-        assertEquals(6,marsRover.getXPosition());
-        assertEquals(4,marsRover.getYPosition());
-        assertEquals(SOUTH,marsRover.getDirection());
+        Coordinates expected = new Coordinates(6,4,SOUTH);
+
+        assertEquals(expected,marsRover.getCoordinates());
 
     }
 
