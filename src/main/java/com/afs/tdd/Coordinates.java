@@ -59,7 +59,7 @@ public class Coordinates {
     @Override
     public boolean equals(Object obj) {
         Coordinates coordinates = (Coordinates) obj;
-        if(this.x_coordinate == coordinates.x_coordinate && this.y_coordinate == coordinates.y_coordinate && this.direction == coordinates.direction)
+        if (this.x_coordinate == coordinates.x_coordinate && this.y_coordinate == coordinates.y_coordinate && this.direction == coordinates.direction)
             return true;
         return false;
     }
